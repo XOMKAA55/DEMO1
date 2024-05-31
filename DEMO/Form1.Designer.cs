@@ -45,9 +45,12 @@
             // 
             // dtgvCostumers
             // 
+            this.dtgvCostumers.AllowUserToAddRows = false;
+            this.dtgvCostumers.AllowUserToDeleteRows = false;
             this.dtgvCostumers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCostumers.Location = new System.Drawing.Point(0, 9);
             this.dtgvCostumers.Name = "dtgvCostumers";
+            this.dtgvCostumers.ReadOnly = true;
             this.dtgvCostumers.RowHeadersWidth = 51;
             this.dtgvCostumers.RowTemplate.Height = 24;
             this.dtgvCostumers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

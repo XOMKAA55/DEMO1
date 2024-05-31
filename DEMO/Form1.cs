@@ -122,11 +122,11 @@ namespace DEMO
             switch (role)
             {
                 case ("admin"):
-                    btnDell.Enabled=false;
                     MessageBox.Show($"Добро пожаловать {persanalDate.login}", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return role;
                 case ("user"):
-                    btnAdd.Enabled = false;
+                    btnDell.Enabled = false;
+                    btnEdit.Enabled = false;
                     MessageBox.Show($"Добро пожаловать {persanalDate.login}", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return role;
                 

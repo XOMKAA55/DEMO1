@@ -109,6 +109,7 @@
             this.Controls.Add(this.oborud_tb);
             this.Name = "fAdd";
             this.Text = "fAdd";
+            this.Load += new System.EventHandler(this.fAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

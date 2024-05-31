@@ -24,8 +24,13 @@ namespace DEMO
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DB.oppenConnection();
-
-            if(dateTimePicker1.Text != null)
+            //проверка на заполнение 
+            if(!string.IsNullOrWhiteSpace(dateTimePicker1.Text) &&
+                !string.IsNullOrWhiteSpace(stat_cb.Text) &&
+                !string.IsNullOrWhiteSpace(oborud_tb.Text) &&
+                !string.IsNullOrWhiteSpace(tip_broke_tb.Text) &&
+                !string.IsNullOrWhiteSpace(_description_tb.Text) &&
+                !string.IsNullOrWhiteSpace(client_tb.Text))
            { 
 
             string query = $"INSERT INTO application (data_application, oborud, tip_broke, _description, client, stat) Values " +
@@ -39,13 +44,19 @@ namespace DEMO
             command.Parameters.AddWithValue("@client", client_tb.Text);
                 command.ExecuteNonQuery();
 
-              MessageBox.Show("Запись успешно добавленна!");
+              MessageBox.Show("Запись успешно добавленна!" ,"Успех",MessageBoxButtons.OK);
             
             Close();
             }
             else
-                MessageBox.Show("ошибка в дате");
 
+                MessageBox.Show("Не все поля заполнины!!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+        }
+
+        private void fAdd_Load(object sender, EventArgs e)
+        {
 
         }
     }
