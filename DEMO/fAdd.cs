@@ -26,7 +26,6 @@ namespace DEMO
             DB.oppenConnection();
             //проверка на заполнение 
             if(!string.IsNullOrWhiteSpace(dateTimePicker1.Text) &&
-                !string.IsNullOrWhiteSpace(stat_cb.Text) &&
                 !string.IsNullOrWhiteSpace(oborud_tb.Text) &&
                 !string.IsNullOrWhiteSpace(tip_broke_tb.Text) &&
                 !string.IsNullOrWhiteSpace(_description_tb.Text) &&
@@ -36,7 +35,7 @@ namespace DEMO
             string query = $"INSERT INTO application (data_application, oborud, tip_broke, _description, client, stat) Values " +
                 $"( @data_application, @oborud, @tip_broke, @_description, @client, @stat)";
             SqlCommand command = new SqlCommand(query, DB.connection);
-            command.Parameters.AddWithValue("@stat", stat_cb.Text);
+            command.Parameters.AddWithValue("@stat", "Новое");
             command.Parameters.AddWithValue("@data_application", dateTimePicker1.Value);
             command.Parameters.AddWithValue("@oborud", oborud_tb.Text);
             command.Parameters.AddWithValue("@tip_broke", tip_broke_tb.Text);
